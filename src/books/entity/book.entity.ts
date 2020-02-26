@@ -11,6 +11,9 @@ export class Book {
   @Column()
   aboutBook: string;
 
+  @Column()
+  imgURL: string;
+
   @Column({ default: true })
   isActive: boolean;
 }
