@@ -6,9 +6,9 @@ import { Book } from './entity/book.entity';
 export class BooksController {
     constructor(private service: BooksService) { }
 
-    @Get(':id')
-    get(@Param() params) {
-        return this.service.getBook(params.id);
+    @Get('/findAllBooks')
+    get() {
+        return this.service.getBooks();
     }
 
     @Post()
