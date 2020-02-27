@@ -13,13 +13,8 @@ export class BooksService {
         return await this.booksRepository.find();
     }
 
-    // tslint:disable-next-line:variable-name
-    async getBook(_id: number): Promise<Book[]> {
-        return await this.booksRepository.find({
-            select: ['nameBook', 'aboutBook', 'isActive'],
-            // tslint:disable-next-line:object-literal-key-quotes
-            where: [{ 'id': _id }],
-        });
+    async getBook(id: string): Promise<Book> {
+        return this.booksRepository.findOne(id);
     }
 
     async createBook(book: BookDto): Promise<Book> {
